@@ -7,7 +7,7 @@ pipeline {
  stages {
     stage('Checkout') {
        steps {
-           git 'https://github.com/YOUR-USERNAME/simple-node-app.git'
+           git 'https://github.com/sasankasandeepa152-ship-it/Jenkinsfile.git'
         }
     }
     stage('Install') {
