@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+
+    tools {
+        nodejs 'NodeJS 16' // Configure in Global Tool Configuration
+} 
+ stages {
+    stage('Checkout') {
+       steps {
+           git 'https://github.com/YOUR-USERNAME/simple-node-app.git'
+        }
+    }
+    stage('Install') {
+          steps {
+               bat 'npm install'
+          }
+    }
+    stage('Test') {
+          steps {
+              bat 'npm test'
+         }
+    }
+    stage('Run') {
+          steps {
+              bat 'npm start'
+         }
+    }
+  }
+}
